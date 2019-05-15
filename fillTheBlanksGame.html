@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/fillTheBlanksGame.css">
+<style>
+.column, .row {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body onload="playGame()">
+<div class="bg">
+<div class="row">
+  <div class="column">
+	<div style="background-color:#aaa;width:fit-content;">
+    <span>Points:<span id="Score"></span></span></br>
+	<span>Level:<span id="level">1</span></span></br>
+	<span>Life Lines:<span id="lifeline"></span></span></br>
+	</div>
+  </div>
+  <div class="column">
+	<div class="column2" style="background-color:#aaa;width:fit-content;float:right">
+    <span id="displayTimer"></span></br>
+    <span>Hightest Point: <span id="HightestPoint">0</span></span>
+	</div>
+  </div>
+</div>
+<div id="flex-ques"></div>
+<div id="flex-container">
+</div>
+</div>
+
+<div id="gameModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span onclick="startNextGame()" class="close">&times;</span>
+      <h2 id="modalHeader" style="margin-left: 34%;">Game Over</h2>
+    </div>
+    <div class="modal-body gameOver">
+      <p id="modalBody">
+	    </p>
+    </div>
+  </div>
+</div>
+<div id="gameStart" class="modal">
+  <div class="modal-content2">
+    <div class="modal-header">
+      <span onclick="startNextGame()" class="close">&times;</span>
+      <h2 style="margin-left: 34%;">Fill in the Blanks Game</h2>
+    </div>
+    <div class="modal-body2">
+      <p style="text-align: center;">
+	   <span>Simple Rule:</span>
+	   <p>1. You get 5 lifelines</p>
+	   <p>2. Game has 2 levels</p>
+	   <p>3. As you gain 2 points, you are promoted to second level</p>
+	   <p>4. Try to score more points to be the winner</p>
+	   </br>
+	   <button onclick="startNextGame()">Let's Start the Game</button>
+	  </p>
+    </div>
+  </div>
+</div>
+
+
+<script src="js/countryList.js"></script>
+<script src="js/fillTheBlanksGame.js"></script>
+</body>
+</html>
